@@ -1,49 +1,42 @@
-import {
-  Blocks,
-  Bot,
-  ChartPie,
-  Film,
-  MessageCircle,
-  Settings2,
-} from "lucide-react";
+import { Blocks, Bot, Filter, Globe, Server, Lock, Logs } from "lucide-react";
 import React from "react";
 
 const features = [
   {
-    icon: Settings2,
-    title: "Customizable Layouts",
+    icon: Globe,
+    title: "Real-Time & Fresh",
     description:
-      "Design your space with drag-and-drop simplicity—create grids, lists, or galleries in seconds.",
+      "Define freshness windows down to minutes. Limit results to hours, days, or custom date ranges.",
   },
   {
-    icon: Blocks,
-    title: "Interactive Widgets",
+    icon: Filter,
+    title: "Domain Restriction",
     description:
-      "Embed polls, quizzes, or forms to keep your audience engaged.",
+      "Search the public web or restrict queries to your specified domains.",
+  },
+  {
+    icon: Logs,
+    title: "Controlled Results",
+    description:
+      "Fine-tune queries with parameters like language, number_of_results, site filters, and safe mode.",
   },
   {
     icon: Bot,
-    title: "AI-Powered Tools",
+    title: "Simple Output",
     description:
-      "Generate summaries, auto-format content, or translate into multiple languages seamlessly.",
+      "Clean and predictable search results ready to feed into your workflows. No parsing headaches.",
   },
   {
-    icon: Film,
-    title: "Media Integrations",
+    icon: Server,
+    title: "Low Latency, High Throughput",
     description:
-      "Connect with Spotify, Instagram, or your own media library for dynamic visuals and sound.",
+      "High-speed queries at scale, without restrictions or access issues.",
   },
   {
-    icon: ChartPie,
-    title: "Advanced Analytics",
+    icon: Lock,
+    title: "Security & Privacy",
     description:
-      "Track engagement, clicks, and user activity with intuitive charts and reports.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Seamless Collaboration",
-    description:
-      "Comment, tag, and assign tasks directly within your documents.",
+      "API key authentication to protect access and keep your data secure.",
   },
 ];
 
@@ -51,7 +44,7 @@ const Features = () => {
   return (
     <div id="features" className="w-full py-12 xs:py-20 px-6">
       <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold tracking-tight text-center">
-        Unleash Your Creativity
+        Precise Search, Instant Results
       </h2>
       <div className="w-full max-w-screen-lg mx-auto mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature) => (
