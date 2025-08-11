@@ -1,4 +1,4 @@
-import { Blocks, Bot, Filter, Globe, Server, Lock, Logs } from "lucide-react";
+import {  Bot, Filter, Globe, Server, Lock, Logs } from "lucide-react";
 import React from "react";
 
 const features = [
