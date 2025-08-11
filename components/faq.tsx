@@ -1,51 +1,50 @@
 import {
-  BadgeDollarSign,
-  Route,
+  CircleDollarSign,
+  ClockArrowDown,
+  Globe2,
+  Server,
   ShieldCheck,
-  Truck,
-  Undo2,
   UserRoundCheck,
 } from "lucide-react";
 
 const faq = [
   {
-    icon: Undo2,
-    question: "What is your return policy?",
+    icon: Globe2,
+    question: "What is MWSearch?",
     answer:
-      "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.",
-  },
-  {
-    icon: Route,
-    question: "How do I track my order?",
-    answer:
-      "Track your order using the link provided in your confirmation email, or log into your account to view tracking details.",
-  },
-  {
-    icon: Truck,
-    question: "Do you ship internationally?",
-    answer:
-      "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.",
-  },
-  {
-    icon: BadgeDollarSign,
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.",
-  },
-  {
-    icon: ShieldCheck,
-    question: "What if I receive a damaged item?",
-    answer:
-      "Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.",
+      "MWSearch is an API-first web search service that delivers fast, structured results from the public web with flexible query parameters.",
   },
   {
     icon: UserRoundCheck,
-    question: "How can I contact customer support?",
+    question: "How do I get started?",
     answer:
-      "Reach out via email at support@example.com or call us at 1-800-123-4567 for assistance with any inquiries.",
+      "Create an account, generate an API key, and call the search endpoint with your query and optional parameters. You can be live in minutes—no SDK required.",
+  },
+  {
+    icon: ClockArrowDown,
+    question: "How does freshness work?",
+    answer:
+      "You can limit results to recent content using a freshness window (e.g., last hours or days) to ensure the information is up to date.",
+  },
+  {
+    icon: Server,
+    question: "What performance can I expect?",
+    answer:
+      "Low-latency responses and high throughput at scale, backed by resilient infrastructure for production workloads.",
+  },
+  {
+    icon: CircleDollarSign,
+    question: "What about pricing and rate limits?",
+    answer:
+      "Plans include monthly quotas, with the option to purchase additional units as needed. Start free, upgrade as you grow.",
+  },
+  {
+    icon: ShieldCheck,
+    question: "Is my data secure?",
+    answer:
+      "Access is secured with API keys, and all requests are transmitted over encrypted connections to protect your data.",
   },
 ];
-
 const FAQ = () => {
   return (
     <div
@@ -57,7 +56,7 @@ const FAQ = () => {
           Frequently Asked Questions
         </h2>
         <p className="mt-3 xs:text-lg text-center text-muted-foreground">
-          Quick answers to common questions about our products and services.
+          Quick answers to common questions about our MWSearch.
         </p>
 
         <div className="mt-12 grid md:grid-cols-2 bg-background rounded-xl overflow-hidden outline outline-[1px] outline-border outline-offset-[-1px]">
