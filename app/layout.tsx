@@ -9,49 +9,40 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "PureLanding - Beautiful Shadcn UI Landing Page",
+  title: "MWSearch - Real-Time Web Search API",
   description:
-    "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+    "MWSearch provides a powerful API for real-time web search, allowing you to search the public web or specific sites with fine-tuned parameters like language, freshness, and result count.",
   keywords: [
-    "PureLanding",
-    "PureLanding Landing Page",
-    "PureLanding Landing Page Template",
-    "PureLanding Page",
-    "Shadcn UI Landing Page",
-    "Shadcn UI Blocks",
-    "Shadcn UI",
-    "Landing Page",
-    "Tailwind CSS Landing Page",
-    "Beautiful Shadcn UI Landing Page",
-    "Next.js 15 Landing Page",
-    "Simple Landing Page",
-    "Landing Page Template",
-    "Landing Page Design",
+    "MWSearch",
+    "MWSearch API",
+    "Real-Time Web Search",
+    "Web Search API",
+    "Search API",
   ],
   openGraph: {
     type: "website",
-    siteName: "PureLanding",
+    siteName: "MWSearch",
     locale: "en_US",
-    url: "https://shadcn-landing-page.vercel.app",
-    title: "PureLanding - Beautiful Shadcn UI Landing Page",
+    url: "https://mwsearch-landing-local.vercel.app",
+    title: "MWSearch - Real-Time Web Search API",
     description:
-      "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+      "MWSearch provides a powerful API for real-time web search, allowing you to search the public web or specific sites with fine-tuned parameters like language, freshness, and result count.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "PureLanding Preview",
+        alt: "MWSearch Preview",
       },
     ],
   },
   authors: [
     {
-      name: "Akash Moradiya",
-      url: "https://shadcnui-blocks.com",
+      name: "Emirhan Durmuş",
+      url: "https://github.com/emirhandrms",
     },
   ],
-  creator: "Akash Moradiya",
+  creator: "Emirhan Durmuş",
   icons: [
     {
       rel: "icon",
