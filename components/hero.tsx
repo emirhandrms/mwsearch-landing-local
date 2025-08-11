@@ -13,17 +13,18 @@ const Hero = () => {
             v1.0.0 is available now! 🚀
           </Badge>
           <h1 className="mt-6 max-w-[20ch] text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-            Customized Shadcn UI Blocks & Components
+            Real-Time Web Search, Directly in Your API
           </h1>
           <p className="mt-6 max-w-[60ch] xs:text-lg">
-            Explore a collection of Shadcn UI blocks and components, ready to
-            preview and copy. Streamline your development workflow with
-            easy-to-implement examples.
+            MWSearch — Get your API key, search the public web or specific
+            sites, control parameters like language, freshness, and result
+            count, and receive answers in seconds.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center sm:justify-center gap-4">
             <Button
               size="lg"
               className="w-full sm:w-auto rounded-full text-base"
+              disabled
             >
               Get Started <ArrowUpRight className="!h-5 !w-5" />
             </Button>
@@ -31,13 +32,14 @@ const Hero = () => {
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-full text-base shadow-none"
+              disabled
             >
               <CirclePlay className="!h-5 !w-5" /> Watch Demo
             </Button>
           </div>
         </div>
       </div>
-      <LogoCloud className="mt-24 max-w-3xl mx-auto" />
+      {/* <LogoCloud className="mt-24 max-w-3xl mx-auto" /> */}
     </div>
   );
 };
