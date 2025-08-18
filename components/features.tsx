@@ -18,7 +18,7 @@ const features = [
     icon: Logs,
     title: "Controlled Results",
     description:
-      "Fine-tune queries with parameters like language, number_of_results, site filters, and safe mode.",
+      "Fine-tune queries with parameters to get precise results.",
   },
   {
     icon: Bot,
