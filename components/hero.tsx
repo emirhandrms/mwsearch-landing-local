@@ -12,7 +12,7 @@ const Hero = () => {
             v1.0.0 is available now! 🚀
           </Badge>
           <h1 className="mt-6 max-w-[20ch] text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-            Real-Time Web Search, Directly in Your API
+            Real-Time Web Search, Directly in Your Apps & Agents
           </h1>
           <p className="mt-6 max-w-[60ch] xs:text-lg">
             MWSearch — Get your API key, search the public web or specific
@@ -27,14 +27,14 @@ const Hero = () => {
             >
               Get Started <ArrowUpRight className="!h-5 !w-5" />
             </Button>
-            <Button
+            {/* <Button
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-full text-base shadow-none"
               disabled
             >
               <CirclePlay className="!h-5 !w-5" /> Watch Demo
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
