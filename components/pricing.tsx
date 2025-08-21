@@ -202,12 +202,14 @@ function CTABanner({
   variant,
   buttonText = "Get Started",
   infoTooltip,
+  isIconVisible = true,
 }: {
   title: string;
   description: string;
   variant?: "free" | "enterprise";
   buttonText?: string;
   infoTooltip?: string;
+  isIconVisible?: boolean;
 }) {
   const bgClass = cn("text-foreground", {
     "bg-background dark": !variant,
@@ -241,27 +243,29 @@ function CTABanner({
             "inset-x-0 inset-y-0 h-[200%] skew-y-12"
           )}
         />
-        <div className="relative z-0 flex flex-col gap-3">
-          <h3 className="text-3xl md:text-4xl font-semibold">{title}</h3>
-          <p className="mt-2 text-base md:text-lg flex items-center gap-1.5">
-            <span>{description}</span>
-            {infoTooltip && (
-              <Tooltip>
-                <TooltipTrigger className="cursor-help">
-                  <CircleHelp className="h-4 w-4 mt-0.5 text-muted-foreground" />
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  {infoTooltip}
-                </TooltipContent>
-              </Tooltip>
-            )}
-          </p>
-        </div>
-        <div className="relative z-0 mt-14 flex flex-col sm:flex-row gap-4">
-          <Button size="lg" disabled>
-            {buttonText}
-            <ArrowUpRight className="!h-5 !w-5" />
-          </Button>
+        <div className="relative z-0 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex flex-col gap-3">
+            <h3 className="text-3xl md:text-4xl font-semibold">{title}</h3>
+            <p className="mt-2 text-base md:text-lg flex items-center gap-1.5">
+              <span>{description}</span>
+              {infoTooltip && (
+                <Tooltip>
+                  <TooltipTrigger className="cursor-help">
+                    <CircleHelp className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                  </TooltipTrigger>
+                  <TooltipContent className="max-w-xs">
+                    {infoTooltip}
+                  </TooltipContent>
+                </Tooltip>
+              )}
+            </p>
+          </div>
+          <div className="mt-6 md:mt-0">
+            <Button size="lg" disabled>
+              {buttonText}
+              {isIconVisible && <ArrowUpRight className="!h-5 !w-5" />}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
@@ -338,6 +342,8 @@ export default function Pricing() {
           title="Enterprise-grade Access & Support"
           description={enterprise.description}
           variant="enterprise"
+          buttonText="Contact Us"
+          isIconVisible={false}
         />
       </div>
     </div>
