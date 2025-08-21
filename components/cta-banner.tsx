@@ -27,7 +27,7 @@ export default function CTABanner() {
         />
         <div className="relative z-0 flex flex-col gap-3">
           <h3 className="text-3xl md:text-4xl font-semibold">
-            Bring Web Search to Your Product
+            Bring RealtimeWeb Search to Your Product
           </h3>
           <p className="mt-2 text-base md:text-lg">
             Get an API key, tune language, freshness, and result count, and
