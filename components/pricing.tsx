@@ -36,7 +36,7 @@ const plans: Plan[] = [
     priceMonthly: 0,
     description: "Start monthly for free and pay per request as you go",
     included: "Included: 0 requests",
-    overage: { label: "Overage: $14 per 1K requests" },
+    overage: { label: "$14 per 1K requests" },
     support: null,
     annualEligible: false,
   },
@@ -201,20 +201,17 @@ function CTABanner({
   description,
   variant,
   buttonText = "Get Started",
+  infoTooltip,
 }: {
   title: string;
   description: string;
   variant?: "free" | "enterprise";
   buttonText?: string;
+  infoTooltip?: string;
 }) {
   const bgClass = cn("text-foreground", {
-    // Default
     "bg-background dark": !variant,
-
-    // Free plan styling
     "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
-
-    // Enterprise plan styling
     "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
   });
 
@@ -246,7 +243,19 @@ function CTABanner({
         />
         <div className="relative z-0 flex flex-col gap-3">
           <h3 className="text-3xl md:text-4xl font-semibold">{title}</h3>
-          <p className="mt-2 text-base md:text-lg">{description}</p>
+          <p className="mt-2 text-base md:text-lg flex items-center gap-1.5">
+            <span>{description}</span>
+            {infoTooltip && (
+              <Tooltip>
+                <TooltipTrigger className="cursor-help">
+                  <CircleHelp className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  {infoTooltip}
+                </TooltipContent>
+              </Tooltip>
+            )}
+          </p>
         </div>
         <div className="relative z-0 mt-14 flex flex-col sm:flex-row gap-4">
           <Button size="lg" disabled>
@@ -285,6 +294,7 @@ export default function Pricing() {
           description={payg.description}
           variant="free"
           buttonText="Start Free"
+          infoTooltip={payg.overage.label}
         />
       </div>
 
