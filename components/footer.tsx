@@ -1,20 +1,20 @@
 import Link from "next/link";
 import { Logo } from "./navbar/logo";
 
-const footerLinks = [
-  {
-    title: "Features",
-    href: "#features",
-  },
-  {
-    title: "Pricing",
-    href: "#pricing",
-  },
-  {
-    title: "FAQ",
-    href: "#faq",
-  },
-];
+// const footerLinks = [
+//   {
+//     title: "Features",
+//     href: "#features",
+//   },
+//   {
+//     title: "Pricing",
+//     href: "#pricing",
+//   },
+//   {
+//     title: "FAQ",
+//     href: "#faq",
+//   },
+// ];
 
 const Footer = () => {
   return (
