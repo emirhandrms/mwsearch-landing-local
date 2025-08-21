@@ -143,11 +143,25 @@ function PlanCard({
       )}
       <h3 className="text-lg font-medium">{plan.name}</h3>
       <p className="mt-2 text-4xl font-bold">
+        <span className="flex items-baseline gap-2">
+          <span>${formatPrice(plan.displayPrice)}</span>
+          {billing === "yearly" && plan.annualEligible && (
+            <span className="text-2xl line-through text-gray-400">
+              ${formatPrice(plan.priceMonthly)}
+            </span>
+          )}
+        </span>
+        <span className="block text-sm text-muted-foreground font-normal">
+          /month
+        </span>
+      </p>
+
+      {/* <p className="mt-2 text-4xl font-bold">
         ${formatPrice(plan.displayPrice)}
         <span className="ml-1.5 text-sm text-muted-foreground font-normal">
           /month
         </span>
-      </p>
+      </p> */}
       <p className="mt-4 font-medium text-muted-foreground">
         {plan.description}
       </p>
