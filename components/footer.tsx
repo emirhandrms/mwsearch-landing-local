@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           {/* Middle: Footer Links */}
-          <ul className="flex items-center gap-4 flex-wrap sm:order-2 order-2 w-full sm:w-auto justify-center sm:justify-start">
+          {/* <ul className="flex items-center gap-4 flex-wrap sm:order-2 order-2 w-full sm:w-auto justify-center sm:justify-start">
             {footerLinks.map(({ title, href }) => (
               <li key={title}>
                 <Link
@@ -38,7 +38,7 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
           {/* Right: Copyright */}
 
           <div className="flex items-center gap-4 sm:order-3 order-3">
