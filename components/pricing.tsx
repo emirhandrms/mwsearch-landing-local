@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, CircleCheck, CircleHelp, Forward } from "lucide-react";
+import { ArrowUpRight, CircleCheck, CircleHelp } from "lucide-react";
 import { useMemo, useState } from "react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
@@ -34,7 +34,7 @@ const plans: Plan[] = [
   {
     name: "Pay‑as‑you‑go",
     priceMonthly: 0,
-    description: "Monthly only. Start for free and pay per request as you go.",
+    description: "Start monthly for free and pay per request as you go",
     included: "Included: 0 requests",
     overage: { label: "Overage: $14 per 1K requests" },
     support: null,
@@ -199,13 +199,33 @@ function PlanCard({
 function CTABanner({
   title,
   description,
+  variant,
+  buttonText = "Get Started",
 }: {
   title: string;
   description: string;
+  variant?: "free" | "enterprise";
+  buttonText?: string;
 }) {
+  const bgClass = cn("text-foreground", {
+    // Default
+    "bg-background dark": !variant,
+
+    // Free plan styling
+    "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
+
+    // Enterprise plan styling
+    "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
+  });
+
   return (
-    <div className="px-6 ">
-      <div className="dark:border relative overflow-hidden my-10 w-full dark bg-background text-foreground max-w-screen-xl mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14">
+    <div className="px-6">
+      <div
+        className={cn(
+          "relative overflow-hidden w-full max-w-screen-xl mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 dark:border",
+          bgClass
+        )}
+      >
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -230,10 +250,8 @@ function CTABanner({
         </div>
         <div className="relative z-0 mt-14 flex flex-col sm:flex-row gap-4">
           <Button size="lg" disabled>
-            Get Started <ArrowUpRight className="!h-5 !w-5" />
-          </Button>
-          <Button size="lg" variant="outline" disabled>
-            Read the Docs <Forward className="!h-5 !w-5" />
+            {buttonText}
+            <ArrowUpRight className="!h-5 !w-5" />
           </Button>
         </div>
       </div>
@@ -260,17 +278,21 @@ export default function Pricing() {
         Pricing
       </h1>
 
+      <div className="mt-8 max-w-screen-xl mx-auto w-full">
+        {/* PAYG CTA */}
+        <CTABanner
+          title="Start with Pay-as-you-go"
+          description={payg.description}
+          variant="free"
+          buttonText="Start Free"
+        />
+      </div>
+
       <Tabs
         value={billing}
         onValueChange={(v) => setBilling(v as Billing)}
-        className="mt-8 max-w-screen-xl mx-auto w-full"
+        className="max-w-screen-xl mx-auto w-full"
       >
-        {/* PAYG CTA */}
-        <CTABanner
-          title="Start for Free with Pay-as-you-go"
-          description={payg.description}
-        />
-
         {/* OR Divider */}
         <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
           OR
@@ -300,11 +322,14 @@ export default function Pricing() {
         OR
       </div>
 
-      {/* Enterprise CTA */}
-      <CTABanner
-        title="Enterprise-grade Access & Support"
-        description={enterprise.description}
-      />
+      <div className="max-w-screen-xl mx-auto w-full">
+        {/* Enterprise CTA */}
+        <CTABanner
+          title="Enterprise-grade Access & Support"
+          description={enterprise.description}
+          variant="enterprise"
+        />
+      </div>
     </div>
   );
 }
