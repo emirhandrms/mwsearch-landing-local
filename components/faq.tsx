@@ -68,7 +68,7 @@ const FAQ = () => {
           Frequently Asked Questions
         </h2>
         <p className="mt-3 xs:text-lg text-center text-muted-foreground">
-          Quick answers to common questions about our MWSearch.
+          Quick answers to common questions about our MindSearch.
         </p>
 
         <div className="mt-12 flex flex-col gap-4">
