@@ -21,7 +21,7 @@ export const Logo = () => (
       priority
     />
 
-    <span className="font-bold text-md text-foreground">MWSearch</span>
+    <span className="font-bold text-md text-foreground">MindSearch</span>
   </div>
 );
 

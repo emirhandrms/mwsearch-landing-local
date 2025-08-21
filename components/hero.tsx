@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CirclePlay } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
             Real-Time Web Search, Directly in Your Apps & Agents
           </h1>
           <p className="mt-6 max-w-[60ch] xs:text-lg">
-            MWSearch — Get your API key, search the public web or specific
+            MindSearch — Get your API key, search the public web or specific
             sites, control parameters like language, freshness, and result
             count, and receive answers in seconds.
           </p>
