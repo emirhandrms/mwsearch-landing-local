@@ -19,9 +19,9 @@ import { cn } from "@/lib/utils";
 const faq = [
   {
     icon: Globe2,
-    question: "What is MWSearch?",
+    question: "What is MindSearch?",
     answer:
-      "MWSearch is an API-first web search service that delivers fast, structured results from the public web with flexible query parameters.",
+      "MindSearch is an API-first web search service that delivers fast, structured realtime results from the public web with flexible query parameters.",
   },
   {
     icon: UserRoundCheck,
