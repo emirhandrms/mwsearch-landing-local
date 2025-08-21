@@ -204,8 +204,8 @@ function CTABanner({
   description: string;
 }) {
   return (
-    <div className="px-6">
-      <div className="dark:border relative overflow-hidden my-20 w-full dark bg-background text-foreground max-w-screen-lg mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14">
+    <div className="px-6 ">
+      <div className="dark:border relative overflow-hidden my-10 w-full dark bg-background text-foreground max-w-screen-xl mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14">
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -254,7 +254,7 @@ export default function Pricing() {
   return (
     <div
       id="pricing"
-      className="flex flex-col items-center justify-center py-12 xs:py-20 px-6"
+      className="flex flex-col items-center justify-center py-12 xs:py-20 px-6 max-w-screen-xl mx-auto"
     >
       <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold text-center tracking-tight">
         Pricing
@@ -263,31 +263,33 @@ export default function Pricing() {
       <Tabs
         value={billing}
         onValueChange={(v) => setBilling(v as Billing)}
-        className="mt-8"
+        className="mt-8 max-w-screen-xl mx-auto w-full"
       >
-        <TabsList className="h-11 px-1.5 rounded-full bg-primary/5">
-          <TabsTrigger value="monthly" className="py-1.5 rounded-full">
-            Monthly
-          </TabsTrigger>
-          <TabsTrigger value="yearly" className="py-1.5 rounded-full">
-            Yearly (Save {YEARLY_DISCOUNT_PERCENT}%)
-          </TabsTrigger>
-        </TabsList>
+        {/* PAYG CTA */}
+        <CTABanner
+          title="Start for Free with Pay-as-you-go"
+          description={payg.description}
+        />
+
+        {/* OR Divider */}
+        <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
+          OR
+        </div>
+
+        <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
+          <TabsList className="h-11 px-1.5 rounded-full bg-primary/5">
+            <TabsTrigger value="monthly" className="py-1.5 rounded-full">
+              Monthly
+            </TabsTrigger>
+            <TabsTrigger value="yearly" className="py-1.5 rounded-full">
+              Yearly (Save {YEARLY_DISCOUNT_PERCENT}%)
+            </TabsTrigger>
+          </TabsList>
+        </div>
       </Tabs>
 
-      {/* PAYG CTA */}
-      <CTABanner
-        title="Start for Free with Pay-as-you-go"
-        description={payg.description}
-      />
-
-      {/* OR Divider */}
-      <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
-        OR
-      </div>
-
       {/* 4 Plans */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-screen-lg mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-screen-xl mx-auto px-6">
         {middlePlans.map((plan) => (
           <PlanCard key={plan.name} plan={plan} billing={billing} />
         ))}
