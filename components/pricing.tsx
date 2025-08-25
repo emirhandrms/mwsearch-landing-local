@@ -153,8 +153,27 @@ function PlanCard({
         </span>
         <span className="block text-sm text-muted-foreground font-normal">
           /month
+          <span className="text-xs text-muted-foreground/80" >
+            {billing === "yearly" && plan.annualEligible && (
+              <>
+                {" "}
+                <span>(Billed annually)</span>
+              </>
+            )}
+          </span>
         </span>
       </p>
+
+      {billing === "yearly" && plan.annualEligible && (
+        <div className="mt-2 text-sm text-muted-foreground flex items-center gap-2">
+          <Badge variant="outline" className="text-green-600 border-green-300">
+            Save $
+            {Math.round(
+              plan.priceMonthly * 12 * (YEARLY_DISCOUNT_PERCENT / 100)
+            )}
+          </Badge>
+        </div>
+      )}
 
       {/* <p className="mt-2 text-4xl font-bold">
         ${formatPrice(plan.displayPrice)}
