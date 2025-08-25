@@ -153,7 +153,7 @@ function PlanCard({
         </span>
         <span className="block text-sm text-muted-foreground font-normal">
           /month
-          <span className="text-xs text-muted-foreground/80" >
+          <span className="text-xs text-muted-foreground/80">
             {billing === "yearly" && plan.annualEligible && (
               <>
                 {" "}
@@ -229,35 +229,118 @@ function PlanCard({
   );
 }
 
-function CTABanner({
+// function CTABanner({
+//   title,
+//   description,
+//   variant,
+//   buttonText = "Get Started",
+//   infoTooltip,
+//   isIconVisible = true,
+// }: {
+//   title: string;
+//   description: string;
+//   variant?: "free" | "enterprise";
+//   buttonText?: string;
+//   infoTooltip?: string;
+//   isIconVisible?: boolean;
+// }) {
+//   const bgClass = cn("text-foreground", {
+//     "bg-background dark": !variant,
+//     "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
+//     "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
+//   });
+
+//   return (
+//     <div className="px-6">
+//       <div
+//         className={cn(
+//           "relative overflow-hidden w-full max-w-screen-xl mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 dark:border",
+//           bgClass
+//         )}
+//       >
+//         {/* <AnimatedGridPattern
+//           numSquares={30}
+//           maxOpacity={0.1}
+//           duration={3}
+//           className={cn(
+//             "[mask-image:radial-gradient(400px_circle_at_right,white,rgba(255,255,255,0.6),transparent)]",
+//             "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+//           )}
+//         /> */}
+//         {/* <AnimatedGridPattern
+//           numSquares={30}
+//           maxOpacity={0.1}
+//           duration={3}
+//           className={cn(
+//             "[mask-image:radial-gradient(400px_circle_at_top_left,white,rgba(255,255,255,0.6),transparent)]",
+//             "inset-x-0 inset-y-0 h-[200%] skew-y-12"
+//           )}
+//         /> */}
+//         <div className="relative z-0 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+//           <div className="flex flex-col gap-3">
+//             <h3 className="text-3xl md:text-4xl font-semibold">{title}</h3>
+//             <p className="mt-2 text-base md:text-lg flex items-center gap-1.5">
+//               <span>{description}</span>
+//               {infoTooltip && (
+//                 <Tooltip>
+//                   <TooltipTrigger className="cursor-help">
+//                     <CircleHelp className="h-4 w-4 mt-0.5 text-muted-foreground" />
+//                   </TooltipTrigger>
+//                   <TooltipContent className="max-w-xs">
+//                     {infoTooltip}
+//                   </TooltipContent>
+//                 </Tooltip>
+//               )}
+//             </p>
+//           </div>
+//           <div className="mt-6 md:mt-0">
+//             <Button size="lg" disabled>
+//               {buttonText}
+//               {isIconVisible && <ArrowUpRight className="!h-5 !w-5" />}
+//             </Button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+function CTAEnterpriseBanner({
   title,
   description,
-  variant,
+  // variant,
   buttonText = "Get Started",
   infoTooltip,
   isIconVisible = true,
 }: {
   title: string;
   description: string;
-  variant?: "free" | "enterprise";
   buttonText?: string;
   infoTooltip?: string;
   isIconVisible?: boolean;
 }) {
-  const bgClass = cn("text-foreground", {
-    "bg-background dark": !variant,
-    "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
-    "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
-  });
+  // const bgClass = cn("text-foreground", {
+  //   "bg-background dark": !variant,
+  //   "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
+  //   "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
+  // });
 
   return (
     <div className="px-6">
       <div
         className={cn(
-          "relative overflow-hidden w-full max-w-screen-xl mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 dark:border",
-          bgClass
+          "relative overflow-hidden w-full max-w-screen-xl mx-auto rounded-2xl py-10 md:py-14 px-4 md:px-12 dark:border",
+          "border rounded-xl"
         )}
       >
+        {/* <div
+      className={cn(
+        "relative border rounded-xl p-6 bg-background/50 flex flex-col",
+        {
+          "border-[2px] border-primary bg-background": plan.isPopular,
+        }
+      )}
+    > */}
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -278,8 +361,8 @@ function CTABanner({
         />
         <div className="relative z-0 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex flex-col gap-3">
-            <h3 className="text-3xl md:text-4xl font-semibold">{title}</h3>
-            <p className="mt-2 text-base md:text-lg flex items-center gap-1.5">
+            <h3 className="text-2xl md:text-3xl font-semibold">{title}</h3>
+            <p className="mt-2 text-base md:text-md flex items-center gap-1.5">
               <span>{description}</span>
               {infoTooltip && (
                 <Tooltip>
@@ -398,17 +481,18 @@ export default function Pricing() {
       </div>
 
       {/* OR Divider */}
-      <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
+      {/* <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
         OR
-      </div>
+      </div> */}
 
-      <div className="max-w-screen-xl mx-auto w-full">
+      <div className="max-w-screen-xl mx-auto w-full mt-8">
         {/* Enterprise CTA */}
-        <CTABanner
-          title="Enterprise-grade Access & Support"
-          description={enterprise.description}
-          variant="enterprise"
-          buttonText="Contact Us"
+        <CTAEnterpriseBanner
+          title="Enterprise-grade Access"
+          description={
+            "300K requests/month included with scalable overage options and Enterprise-level support. Ideal for mission-critical workloads that need custom solutions"
+          }
+          buttonText="Choose Enterprise"
           isIconVisible={false}
         />
       </div>
