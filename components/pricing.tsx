@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
@@ -393,7 +393,7 @@ export default function Pricing() {
   const displayPlans = useDisplayPlans(billing);
 
   const payg = displayPlans.find((p) => p.name === "Pay‑as‑you‑go")!;
-  const enterprise = displayPlans.find((p) => p.name === "Enterprise")!;
+  // const enterprise = displayPlans.find((p) => p.name === "Enterprise")!;
   const middlePlans = displayPlans.filter(
     (p) => p.name !== "Pay‑as‑you‑go" && p.name !== "Enterprise"
   );
