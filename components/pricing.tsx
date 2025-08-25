@@ -471,7 +471,7 @@ export default function Pricing() {
             </TabsTrigger>
           </TabsList>
         </div> */}
-        <div className="flex justify-end w-full max-w-screen-xl px-6 my-10">
+        <div className="flex justify-end w-full max-w-screen-xl px-6 mt-10 mb-5">
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <Switch
               id="annual-billing"
