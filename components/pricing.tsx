@@ -319,18 +319,17 @@ function CTAEnterpriseBanner({
   infoTooltip?: string;
   isIconVisible?: boolean;
 }) {
-  // const bgClass = cn("text-foreground", {
-  //   "bg-background dark": !variant,
-  //   "bg-[#f4f4f5] dark:bg-[#1f1f1f]": variant === "free",
-  //   "bg-[#e5e7eb] dark:bg-[#111827]": variant === "enterprise",
-  // });
+  const bgClass = cn("text-foreground", {
+    "bg-[#e5e7eb] dark:bg-[#111827]": true,
+  });
 
   return (
     <div className="px-6">
       <div
         className={cn(
           "relative overflow-hidden w-full max-w-screen-xl mx-auto rounded-2xl py-10 md:py-14 px-4 md:px-12 dark:border",
-          "border rounded-xl"
+          "border rounded-xl",
+          bgClass
         )}
       >
         {/* <div
