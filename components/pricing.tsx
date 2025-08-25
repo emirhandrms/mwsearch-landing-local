@@ -34,7 +34,7 @@ const plans: Plan[] = [
   {
     name: "Pay‑as‑you‑go",
     priceMonthly: 0,
-    description: "Start monthly for free and pay per request as you go",
+    description: "No monthly fee. Pay per request as you go",
     included: "Included: 0 requests",
     overage: { label: "$14 per 1K requests" },
     support: null,
@@ -304,17 +304,50 @@ export default function Pricing() {
       <h1 className="text-3xl xs:text-4xl md:text-5xl font-bold text-center tracking-tight">
         Pricing
       </h1>
+      <p
+        id="payg-description"
+        className="mt-3 xs:text-md text-center text-muted-foreground"
+      >
+        Try our <span className="font-medium">Pay‑as‑You‑Go</span> plan with no
+        monthly fees — pay only for what you use.{" "}
+        <Tooltip>
+          <TooltipTrigger>
+            <span
+              className="cursor-pointer text-blue-500 hover:underline hover:underline-offset-4"
+              onClick={() => alert("Start Now clicked")}
+            >
+              Start Now
+            </span>
+          </TooltipTrigger>
+          <TooltipContent className="max-w-xs">
+            {payg.overage.label}
+          </TooltipContent>
+        </Tooltip>
+        <br />
+        Or, you can pick a plan that fits your needs.
+      </p>
 
-      <div className="mt-8 max-w-screen-xl mx-auto w-full">
-        {/* PAYG CTA */}
-        <CTABanner
+      {/* <div className="mt-8 max-w-screen-xl mx-auto w-full"> */}
+      {/* PAYG CTA */}
+      {/* <CTABanner
           title="Start with Pay-as-you-go"
           description={payg.description}
           variant="free"
           buttonText="Start Free"
           infoTooltip={payg.overage.label}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
+      {/* <div className="mt-8 max-w-screen-xl mx-auto w-full"> */}
+      {/* PAYG CTA */}
+      {/* <FreeCTABanner
+          title="Start with Pay-as-you-go"
+          description={payg.description}
+          variant="free"
+          buttonText="Start Free"
+          infoTooltip={payg.overage.label}
+          isIconVisible={false}
+        /> */}
+      {/* </div> */}
 
       <Tabs
         value={billing}
@@ -322,9 +355,9 @@ export default function Pricing() {
         className="max-w-screen-xl mx-auto w-full"
       >
         {/* OR Divider */}
-        <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
+        {/* <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
           OR
-        </div>
+        </div> */}
 
         <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
           <TabsList className="h-11 px-1.5 rounded-full bg-primary/5">

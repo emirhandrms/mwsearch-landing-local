@@ -67,7 +67,7 @@ const FAQ = () => {
         <h2 className="text-3xl xs:text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tight text-center">
           Frequently Asked Questions
         </h2>
-        <p className="mt-3 xs:text-lg text-center text-muted-foreground">
+        <p className="mt-3 xs:text-md text-center text-muted-foreground">
           Quick answers to common questions about our MindSearch.
         </p>
 
