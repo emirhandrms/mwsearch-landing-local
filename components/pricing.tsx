@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight, CircleCheck, CircleHelp } from "lucide-react";
 import { useMemo, useState } from "react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { Switch } from "./ui/switch";
 
 type Billing = "monthly" | "yearly";
 
@@ -460,7 +461,7 @@ export default function Pricing() {
           OR
         </div> */}
 
-        <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
+        {/* <div className="text-center text-muted-foreground my-10 font-medium uppercase tracking-wide">
           <TabsList className="h-11 px-1.5 rounded-full bg-primary/5">
             <TabsTrigger value="monthly" className="py-1.5 rounded-full">
               Monthly
@@ -469,6 +470,23 @@ export default function Pricing() {
               Yearly (Save {YEARLY_DISCOUNT_PERCENT}%)
             </TabsTrigger>
           </TabsList>
+        </div> */}
+        <div className="flex justify-end w-full max-w-screen-xl px-6 my-10">
+          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+            <Switch
+              id="annual-billing"
+              checked={billing === "yearly"}
+              onCheckedChange={(checked) =>
+                setBilling(checked ? "yearly" : "monthly")
+              }
+            />
+            <label htmlFor="annual-billing" className="cursor-pointer">
+              Annualy
+              <span className="text-muted-foreground ml-1">
+                (Save {YEARLY_DISCOUNT_PERCENT}%)
+              </span>
+            </label>
+          </div>
         </div>
       </Tabs>
 
